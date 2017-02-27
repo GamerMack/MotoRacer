@@ -30,44 +30,44 @@ enum DirtPathType{
 
 
 class DirtPathAtlasManager{
-    static let dirtPathTextureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Dirt.atlas")
+    static let gameTextures = GameTextures.sharedInstance
     
-    static func loadDirtPathTexture(pathType: DirtPathType) -> SKTexture{
-        let image = loadDirtPathImage(pathType: pathType)
+    static func loadDirtPathTexture(dirtPathType: DirtPathType) -> SKSpriteNode{
+        let texture = loadDirtPathTexture(pathType: dirtPathType)
         
-        return SKTexture(image: image)
+        return SKSpriteNode(texture: texture)
     }
     
-    static private func loadDirtPathImage(pathType: DirtPathType) -> UIImage{
+    static private func loadDirtPathTexture(pathType: DirtPathType) -> SKTexture{
         switch(pathType){
         case .Bottom:
-            return #imageLiteral(resourceName: "land_sand14")
+            return gameTextures.texture(name: "land_sand14")
         case .Top:
-            return #imageLiteral(resourceName: "land_dirt14")
+            return gameTextures.texture(name: "land_dirt14")
         case .Right:
-            return #imageLiteral(resourceName: "land_sand04")
+            return gameTextures.texture(name: "land_sand04")
         case .Left:
-            return #imageLiteral(resourceName: "land_sand06")
+            return gameTextures.texture(name: "land_sand06")
         case .AllDirt:
-            return #imageLiteral(resourceName: "land_dirt05")
+            return gameTextures.texture(name: "land_dirt05")
         case .AllSand:
-            return #imageLiteral(resourceName: "land_sand12")
+            return gameTextures.texture(name: "land_sand05")
         case .TopLeftOuter:
-            return #imageLiteral(resourceName: "land_sand02")
+            return gameTextures.texture(name: "land_sand02")
         case .TopLeftInner:
-            return #imageLiteral(resourceName: "land_sand13")
+            return gameTextures.texture(name: "land_sand13")
         case .TopRightOuter:
-            return #imageLiteral(resourceName: "land_dirt01")
+            return gameTextures.texture(name: "land_dirt01")
         case .TopRightInner:
-            return #imageLiteral(resourceName: "land_dirt03")
+            return gameTextures.texture(name: "land_dirt03")
         case .BottomLeftOuter:
-            return #imageLiteral(resourceName: "land_sand07")
+            return gameTextures.texture(name: "land_sand07")
         case .BottomLeftInner:
-            return #imageLiteral(resourceName: "land_sand09")
+            return gameTextures.texture(name: "land_sand09")
         case .BottomRightOuter:
-            return #imageLiteral(resourceName: "land_dirt11")
+            return gameTextures.texture(name: "land_dirt11")
         case .BottomRightInner:
-            return #imageLiteral(resourceName: "land_sand11")
+            return gameTextures.texture(name: "land_sand11")
         }
     }
     

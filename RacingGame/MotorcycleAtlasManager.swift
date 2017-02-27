@@ -51,25 +51,25 @@ enum MotorcycleColor{
 
 
 class MotorcycleAtlasManager{
-    static let motorcycleTextureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Motorcycles.atlas")
+    static let gameTextures = GameTextures.sharedInstance
     
-    static func loadMotorcycleTexture(color: MotorcycleColor) -> SKTexture{
-        let image = loadMotorcycleImage(color: color)
-        return SKTexture(image: image)
+    static func loadMotorcycleSprite(color: MotorcycleColor) -> SKSpriteNode{
+        let texture = loadMotorcycleTexture(color: color)
+        return SKSpriteNode(texture: texture)
     }
     
-    static private func loadMotorcycleImage(color: MotorcycleColor) -> UIImage{
+    static private func loadMotorcycleTexture(color: MotorcycleColor) -> SKTexture{
         switch(color){
         case .black:
-            return #imageLiteral(resourceName: "motorcycle_black")
+            return gameTextures.texture(name: "motorcycle_black")
         case .blue:
-            return #imageLiteral(resourceName: "motorcycle_blue")
+            return gameTextures.texture(name: "motorcycle_blue")
         case .green:
-            return #imageLiteral(resourceName: "motorcycle_green")
+            return gameTextures.texture(name: "motorcycle_green")
         case .red:
-            return #imageLiteral(resourceName: "motorcycle_red")
+            return gameTextures.texture(name: "motorcycle_red")
         case .yellow:
-            return #imageLiteral(resourceName: "motorcycle_yellow")
+            return gameTextures.texture(name: "motorcycle_red")
         }
     }
 }
