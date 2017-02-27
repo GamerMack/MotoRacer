@@ -10,33 +10,30 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
+
+    private var gameSceneLabel: SKLabelNode?
     
-   let motorcycle1 = SKSpriteNode(texture: MotorcycleAtlasManager.loadMotorcycleTexture(color: .blue))
+    let gameTextures = GameTextures.sharedInstance
+    
+    var player = SKSpriteNode()
     
     var turnRightAction: SKAction = SKAction()
     var isTurningRight: Bool = false
     
+    
     override func didMove(to view: SKView) {
-   
-        
-        let backgroundLayoutScene = GameScene(fileNamed: "Asphalt1")!
-        let backgroundRootNode = backgroundLayoutScene.childNode(withName: "Root") as! SKSpriteNode
-        backgroundRootNode.move(toParent: self)
-        
-        motorcycle1.position = CGPoint(x: 0, y: 0)
-       // backgroundRootNode.addChild(motorcycle1)
-   
-        self.addChild(motorcycle1)
-        
-        let title = SKLabelNode(text: "Hazard Race 2")
-        title.fontName = kFontKenPixelHigh
-        title.position = CGPoint(x: 0, y: 30)
-        
-        self.addChild(title)
-        
+        self.setup()
+       
         
     }
 
+    private func setup(){
+        gameSceneLabel = SKLabelNode(fontNamed: "Arial")
+        gameSceneLabel?.text = "GameScene"
+        gameSceneLabel?.fontSize = 36.0
+        gameSceneLabel?.position = CGPoint(x: kViewSize.width/2, y: kViewSize.height/2)
+        self.addChild(gameSceneLabel!)
+    }
     
     func configureMotorcycleActions(){
         
@@ -62,25 +59,11 @@ class GameScene: SKScene {
 //        
 //        let mainTurningAction = SKAction.sequence(turnActionUnitGroup)
 
-        
-        let mainTurningAction = SKAction.group([
-            SKAction.rotate(byAngle: 90.0, duration: 10),
-            SKAction.move(by: CGVector(dx: 50, dy: 50), duration: 10)
-            ])
-        
-        turnRightAction = mainTurningAction
-
-    }
+            }
   
     
     func touchDown(atPoint pos : CGPoint) {
-        isTurningRight = !isTurningRight
-        
-        if(isTurningRight){
-            motorcycle1.removeAction(forKey: "turnRight")
-        } else {
-            motorcycle1.run(turnRightAction, withKey: "turnRight")
-        }
+       
 
     }
     
@@ -93,7 +76,14 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
+       let touch = touches.first! as UITouch
+        let touchLocation = touch.location(in: self)
+        
+        if(gameSceneLabel!.contains(touchLocation)){
+            loadScene()
+        }
+        
+    
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -111,5 +101,12 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+    }
+    
+    //MARK: - LoadScene
+    private func loadScene(){
+        let scene = GameOverScene(size: kViewSize)
+        let transition = SKTransition.fade(with: UIColor.green, duration: 2.0)
+        self.view?.presentScene(scene, transition: transition)
     }
 }

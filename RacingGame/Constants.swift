@@ -7,7 +7,16 @@
 //
 
 import Foundation
+import UIKit
+import SpriteKit
 
+//Constants
+
+let kDebug = true
+let kViewSize = UIScreen.main.bounds.size
+
+
+//Fonts
 let kFontKenPixelBlocksRegular = "KenPixel Blocks Regular"
 let kFontKenPixelFutureSquare = "KenPixel Future Square Regular"
 let kFontKenPixelFuture = "KenPixel Future Regular"

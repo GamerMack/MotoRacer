@@ -17,26 +17,26 @@ class GameTextures{
     //MARK: Private class constants for names of texture files
     
     //VEHICLES and CHARACTERS
-    private var carSprites = "Cars"
-    private var motorcycleSprites = "Motorcycles"
-    private var characterSprites = "Characters"
-    private var robotSprites = "Robots"
+    private var carSprites = "Cars.atlas"
+    private var motorcycleSprites = "Motorcycles.atlas"
+    private var characterSprites = "Characters.atlas"
+    private var robotSprites = "Robots.atlas"
     
     //OTHER GAME OBJECTS
-    private var objectSprites = "Objects"
+    private var objectSprites = "Objects.atlas"
 
     
     //ENVIRONMENT TILES
-    private var sandSprites = "Sand"
-    private var sandRoadSprites = "SandRoad"
-    private var grassSprites = "Grass"
-    private var dirtSprites = "Dirt"
-    private var dirtRoadSprites = "DirtRoad"
-    private var asphaltRoadSprites = "AsphaltRoad"
-    private var roadSprites = "Road"
+    private var sandSprites = "Sand.atlas"
+    private var sandRoadSprites = "SandRoad.atlas"
+    private var grassSprites = "Grass.atlas"
+    private var dirtSprites = "Dirt.atlas"
+    private var dirtRoadSprites = "DirtRoad.atlas"
+    private var asphaltRoadSprites = "AsphaltRoad.atlas"
+    private var roadSprites = "Road.atlas"
     
     //GAME INTERFACE
-    private var gameInterfaceSprites = "GameInterface"
+    private var gameInterfaceSprites = "GameInterface.atlas"
     
     
     //MARK: Private class variables
@@ -57,23 +57,27 @@ class GameTextures{
     
     //MARK: - Init
     private init(){
-          carSpriteAtlas = SKTextureAtlas(named: carSprites)
-          motorcycleSpriteAtlas = SKTextureAtlas(named: motorcycleSprites)
-          characterSpriteAtlas = SKTextureAtlas(named: characterSprites)
-          robotSpriteAtlas = SKTextureAtlas(named: robotSprites)
-          objectSpriteAtlas = SKTextureAtlas(named: objectSprites)
-          sandSpriteTextureAtlas = SKTextureAtlas(named: sandSprites)
-          sandRoadSpriteTextureAtlas = SKTextureAtlas(named: sandRoadSprites)
-          grassSpriteTextureAtlas = SKTextureAtlas(named: grassSprites)
-          dirtSpriteTextureAtlas = SKTextureAtlas(named: dirtSprites)
-          dirtRoadSpriteTextureAtlas = SKTextureAtlas(named: dirtRoadSprites)
-          asphaltRoadSpriteTextureAtlas = SKTextureAtlas(named: asphaltRoadSprites)
-          roadSpriteTextureAtlas = SKTextureAtlas(named: roadSprites)
-          gameInterfaceSpriteTextureAtlas = SKTextureAtlas(named: gameInterfaceSprites)
+          self.carSpriteAtlas = SKTextureAtlas(named: carSprites)
+          self.motorcycleSpriteAtlas = SKTextureAtlas(named: motorcycleSprites)
+          self.characterSpriteAtlas = SKTextureAtlas(named: characterSprites)
+          self.robotSpriteAtlas = SKTextureAtlas(named: robotSprites)
+          self.objectSpriteAtlas = SKTextureAtlas(named: objectSprites)
+          self.sandSpriteTextureAtlas = SKTextureAtlas(named: sandSprites)
+          self.sandRoadSpriteTextureAtlas = SKTextureAtlas(named: sandRoadSprites)
+          self.grassSpriteTextureAtlas = SKTextureAtlas(named: grassSprites)
+          self.dirtSpriteTextureAtlas = SKTextureAtlas(named: dirtSprites)
+          self.dirtRoadSpriteTextureAtlas = SKTextureAtlas(named: dirtRoadSprites)
+          self.asphaltRoadSpriteTextureAtlas = SKTextureAtlas(named: asphaltRoadSprites)
+          self.roadSpriteTextureAtlas = SKTextureAtlas(named: roadSprites)
+          self.gameInterfaceSpriteTextureAtlas = SKTextureAtlas(named: gameInterfaceSprites)
         
     }
     
     //Helper Methods
+    func carTextureWithName(name: String) -> SKTexture{
+        return carSpriteAtlas.textureNamed(name)
+    }
+    
     func texture(name: String) -> SKTexture{
         return SKTexture(imageNamed: name)
     }

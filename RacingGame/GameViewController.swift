@@ -12,36 +12,35 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
             
             view.ignoresSiblingOrder = true
+
+            if(kDebug){
+                view.showsFPS = true
+                view.showsNodeCount = true
+                
+            }
             
-            view.showsFPS = true
-            view.showsNodeCount = true
+            let scene = MenuScene(size: kViewSize)
+            scene.scaleMode = .aspectFill
+
+            let transition = SKTransition.fade(with: ColorThemes.DeepTheme.lightbrown.skColor , duration: 2.0)
+            view.presentScene(scene, transition: transition)
+            
+            
+          
         }
     }
-
     override var shouldAutorotate: Bool {
         return true
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+       return .portrait
     }
 
     override func didReceiveMemoryWarning() {
