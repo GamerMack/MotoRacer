@@ -18,7 +18,6 @@
 		BD4C220B1E64123700723BAB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C220A1E64123700723BAB /* Colors.swift */; };
 		BD4C220E1E6432D600723BAB /* GameTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C220D1E6432D600723BAB /* GameTextures.swift */; };
 		BDCE8A351E62F50200A3A1CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE8A341E62F50200A3A1CA /* AppDelegate.swift */; };
-		BDCE8A371E62F50200A3A1CA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BDCE8A361E62F50200A3A1CA /* GameScene.sks */; };
 		BDCE8A391E62F50200A3A1CA /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BDCE8A381E62F50200A3A1CA /* Actions.sks */; };
 		BDCE8A3B1E62F50200A3A1CA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE8A3A1E62F50200A3A1CA /* GameScene.swift */; };
 		BDCE8A3D1E62F50200A3A1CA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE8A3C1E62F50200A3A1CA /* GameViewController.swift */; };
@@ -57,7 +56,6 @@
 		BD4C220D1E6432D600723BAB /* GameTextures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTextures.swift; sourceTree = "<group>"; };
 		BDCE8A311E62F50200A3A1CA /* RacingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RacingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCE8A341E62F50200A3A1CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BDCE8A361E62F50200A3A1CA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BDCE8A381E62F50200A3A1CA /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		BDCE8A3A1E62F50200A3A1CA /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		BDCE8A3C1E62F50200A3A1CA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +119,39 @@
 			name = Singletons;
 			sourceTree = "<group>";
 		};
+		BD6B88E31E643F18007FEC8A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BDCE8A3A1E62F50200A3A1CA /* GameScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		BD6B88E41E643F4C007FEC8A /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				BDCE8A381E62F50200A3A1CA /* Actions.sks */,
+			);
+			name = Actions;
+			sourceTree = "<group>";
+		};
+		BD6B88E51E643F77007FEC8A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDCE8A3C1E62F50200A3A1CA /* GameViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BD6B88E61E643F86007FEC8A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BDCE8A431E62F50200A3A1CA /* LaunchScreen.storyboard */,
+				BDCE8A3E1E62F50200A3A1CA /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		BDCE8A281E62F50200A3A1CA = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +171,10 @@
 		BDCE8A331E62F50200A3A1CA /* RacingGame */ = {
 			isa = PBXGroup;
 			children = (
+				BD6B88E61E643F86007FEC8A /* Storyboards */,
+				BD6B88E51E643F77007FEC8A /* Controllers */,
+				BD6B88E41E643F4C007FEC8A /* Actions */,
+				BD6B88E31E643F18007FEC8A /* Scenes */,
 				BD4C220C1E6432C000723BAB /* Singletons */,
 				BD4C22081E64103C00723BAB /* Fonts */,
 				BD4C21FD1E63EA9600723BAB /* EnvironmentLayouts */,
@@ -147,14 +182,7 @@
 				BDCE8A891E63336B00A3A1CA /* Utility */,
 				BDCE8A741E632CE500A3A1CA /* SpriteConfigurationScenes */,
 				BDCE8A4E1E6306C700A3A1CA /* AtlasManagers */,
-				BDCE8A341E62F50200A3A1CA /* AppDelegate.swift */,
-				BDCE8A361E62F50200A3A1CA /* GameScene.sks */,
-				BDCE8A381E62F50200A3A1CA /* Actions.sks */,
-				BDCE8A3A1E62F50200A3A1CA /* GameScene.swift */,
-				BDCE8A3C1E62F50200A3A1CA /* GameViewController.swift */,
-				BDCE8A3E1E62F50200A3A1CA /* Main.storyboard */,
 				BDCE8A411E62F50200A3A1CA /* Assets.xcassets */,
-				BDCE8A431E62F50200A3A1CA /* LaunchScreen.storyboard */,
 				BDCE8A461E62F50200A3A1CA /* Info.plist */,
 			);
 			path = RacingGame;
@@ -195,6 +223,7 @@
 		BDCE8A891E63336B00A3A1CA /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				BDCE8A341E62F50200A3A1CA /* AppDelegate.swift */,
 				BDCE8A8A1E63338000A3A1CA /* HelperFunctions.swift */,
 				BD4C22061E640C7E00723BAB /* Constants.swift */,
 				BD4C220A1E64123700723BAB /* Colors.swift */,
@@ -270,7 +299,6 @@
 				BD4C21F91E63D29100723BAB /* Motorcycles.sks in Resources */,
 				BDCE8A7E1E6331EF00A3A1CA /* Tents.sks in Resources */,
 				BDCE8A7A1E63314700A3A1CA /* Rocks.sks in Resources */,
-				BDCE8A371E62F50200A3A1CA /* GameScene.sks in Resources */,
 				BD4C22051E63FAA700723BAB /* Wingman.sks in Resources */,
 				BD4C22091E64103C00723BAB /* Fonts in Resources */,
 				BDCE8A861E6332EF00A3A1CA /* Trees.sks in Resources */,
