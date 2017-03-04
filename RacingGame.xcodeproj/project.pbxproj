@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD39620D1E6AC57600C475D2 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39620C1E6AC57600C475D2 /* Player.swift */; };
+		BD39620F1E6ACBE300C475D2 /* SmokeEmitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39620E1E6ACBE300C475D2 /* SmokeEmitterManager.swift */; };
+		BD4B735C1E6A9CE200173E83 /* Rock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4B735B1E6A9CE200173E83 /* Rock.swift */; };
+		BD4B735E1E6AA16600173E83 /* BitmaskCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4B735D1E6AA16600173E83 /* BitmaskCategories.swift */; };
+		BD4B73611E6AB82300173E83 /* Light1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD4B73601E6AB82300173E83 /* Light1.sks */; };
+		BD4B73631E6AB8FB00173E83 /* DirtTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD4B73621E6AB8FB00173E83 /* DirtTileSet.sks */; };
 		BD4C21F91E63D29100723BAB /* Motorcycles.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD4C21F81E63D29100723BAB /* Motorcycles.sks */; };
 		BD4C21FC1E63E77600723BAB /* DirtSandTiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD4C21FB1E63E77600723BAB /* DirtSandTiles.sks */; };
 		BD4C21FF1E63EAA600723BAB /* DirtSand1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD4C21FE1E63EAA600723BAB /* DirtSand1.sks */; };
@@ -19,6 +25,12 @@
 		BD4C220E1E6432D600723BAB /* GameTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C220D1E6432D600723BAB /* GameTextures.swift */; };
 		BD6B88E81E644E73007FEC8A /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B88E71E644E73007FEC8A /* MenuScene.swift */; };
 		BD6B88EA1E645355007FEC8A /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B88E91E645355007FEC8A /* GameOverScene.swift */; };
+		BD6B88EE1E646A0E007FEC8A /* Explosion2.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD6B88ED1E646A0E007FEC8A /* Explosion2.sks */; };
+		BD6B88F21E646A6F007FEC8A /* Explosion1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD6B88F11E646A6F007FEC8A /* Explosion1.sks */; };
+		BD6B88F51E646C3B007FEC8A /* Explosion3.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD6B88F41E646C3B007FEC8A /* Explosion3.sks */; };
+		BD6B88F71E646D6D007FEC8A /* Smoke1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD6B88F61E646D6D007FEC8A /* Smoke1.sks */; };
+		BD6B88F91E646E7C007FEC8A /* Spark1.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD6B88F81E646E7C007FEC8A /* Spark1.sks */; };
+		BD6B88FD1E646F55007FEC8A /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD6B88FC1E646F55007FEC8A /* Snow.sks */; };
 		BDCE8A351E62F50200A3A1CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE8A341E62F50200A3A1CA /* AppDelegate.swift */; };
 		BDCE8A391E62F50200A3A1CA /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BDCE8A381E62F50200A3A1CA /* Actions.sks */; };
 		BDCE8A3B1E62F50200A3A1CA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE8A3A1E62F50200A3A1CA /* GameScene.swift */; };
@@ -46,6 +58,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD39620C1E6AC57600C475D2 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BD39620E1E6ACBE300C475D2 /* SmokeEmitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmokeEmitterManager.swift; sourceTree = "<group>"; };
+		BD4B735B1E6A9CE200173E83 /* Rock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock.swift; sourceTree = "<group>"; };
+		BD4B735D1E6AA16600173E83 /* BitmaskCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmaskCategories.swift; sourceTree = "<group>"; };
+		BD4B73601E6AB82300173E83 /* Light1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Light1.sks; sourceTree = "<group>"; };
+		BD4B73621E6AB8FB00173E83 /* DirtTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DirtTileSet.sks; sourceTree = "<group>"; };
 		BD4C21F81E63D29100723BAB /* Motorcycles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Motorcycles.sks; sourceTree = "<group>"; };
 		BD4C21FB1E63E77600723BAB /* DirtSandTiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DirtSandTiles.sks; sourceTree = "<group>"; };
 		BD4C21FE1E63EAA600723BAB /* DirtSand1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DirtSand1.sks; sourceTree = "<group>"; };
@@ -58,6 +76,12 @@
 		BD4C220D1E6432D600723BAB /* GameTextures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTextures.swift; sourceTree = "<group>"; };
 		BD6B88E71E644E73007FEC8A /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		BD6B88E91E645355007FEC8A /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		BD6B88ED1E646A0E007FEC8A /* Explosion2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion2.sks; sourceTree = "<group>"; };
+		BD6B88F11E646A6F007FEC8A /* Explosion1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion1.sks; sourceTree = "<group>"; };
+		BD6B88F41E646C3B007FEC8A /* Explosion3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion3.sks; sourceTree = "<group>"; };
+		BD6B88F61E646D6D007FEC8A /* Smoke1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke1.sks; sourceTree = "<group>"; };
+		BD6B88F81E646E7C007FEC8A /* Spark1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark1.sks; sourceTree = "<group>"; };
+		BD6B88FC1E646F55007FEC8A /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
 		BDCE8A311E62F50200A3A1CA /* RacingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RacingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCE8A341E62F50200A3A1CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCE8A381E62F50200A3A1CA /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -97,11 +121,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD4B735A1E6A9CBF00173E83 /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				BD4B735B1E6A9CE200173E83 /* Rock.swift */,
+				BD39620C1E6AC57600C475D2 /* Player.swift */,
+			);
+			name = GameObjects;
+			sourceTree = "<group>";
+		};
+		BD4B735F1E6AB80B00173E83 /* Lights */ = {
+			isa = PBXGroup;
+			children = (
+				BD4B73601E6AB82300173E83 /* Light1.sks */,
+			);
+			name = Lights;
+			sourceTree = "<group>";
+		};
 		BD4C21FA1E63E75800723BAB /* EnvironmentTiles */ = {
 			isa = PBXGroup;
 			children = (
 				BD4C21FB1E63E77600723BAB /* DirtSandTiles.sks */,
 				BD4C22001E63F00100723BAB /* RoadAsphaltTiles.sks */,
+				BD4B73621E6AB8FB00173E83 /* DirtTileSet.sks */,
 			);
 			name = EnvironmentTiles;
 			sourceTree = "<group>";
@@ -119,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				BD4C220D1E6432D600723BAB /* GameTextures.swift */,
+				BD39620E1E6ACBE300C475D2 /* SmokeEmitterManager.swift */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -137,6 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				BDCE8A381E62F50200A3A1CA /* Actions.sks */,
+				BD6B88ED1E646A0E007FEC8A /* Explosion2.sks */,
+				BD6B88F11E646A6F007FEC8A /* Explosion1.sks */,
+				BD6B88F41E646C3B007FEC8A /* Explosion3.sks */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -158,6 +204,16 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		BD6B88F31E646C2B007FEC8A /* ParticleEmitters */ = {
+			isa = PBXGroup;
+			children = (
+				BD6B88F61E646D6D007FEC8A /* Smoke1.sks */,
+				BD6B88F81E646E7C007FEC8A /* Spark1.sks */,
+				BD6B88FC1E646F55007FEC8A /* Snow.sks */,
+			);
+			name = ParticleEmitters;
+			sourceTree = "<group>";
+		};
 		BDCE8A281E62F50200A3A1CA = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +233,9 @@
 		BDCE8A331E62F50200A3A1CA /* RacingGame */ = {
 			isa = PBXGroup;
 			children = (
+				BD4B735F1E6AB80B00173E83 /* Lights */,
+				BD4B735A1E6A9CBF00173E83 /* GameObjects */,
+				BD6B88F31E646C2B007FEC8A /* ParticleEmitters */,
 				BD6B88E61E643F86007FEC8A /* Storyboards */,
 				BD6B88E51E643F77007FEC8A /* Controllers */,
 				BD6B88E41E643F4C007FEC8A /* Actions */,
@@ -233,6 +292,7 @@
 				BDCE8A8A1E63338000A3A1CA /* HelperFunctions.swift */,
 				BD4C22061E640C7E00723BAB /* Constants.swift */,
 				BD4C220A1E64123700723BAB /* Colors.swift */,
+				BD4B735D1E6AA16600173E83 /* BitmaskCategories.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -297,11 +357,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDCE8A761E632D4F00A3A1CA /* Barrels.sks in Resources */,
+				BD6B88FD1E646F55007FEC8A /* Snow.sks in Resources */,
 				BD4C21FC1E63E77600723BAB /* DirtSandTiles.sks in Resources */,
 				BD4C21FF1E63EAA600723BAB /* DirtSand1.sks in Resources */,
+				BD4B73631E6AB8FB00173E83 /* DirtTileSet.sks in Resources */,
 				BDCE8A401E62F50200A3A1CA /* Main.storyboard in Resources */,
 				BD4C22011E63F00100723BAB /* RoadAsphaltTiles.sks in Resources */,
 				BD4C22031E63F23900723BAB /* Asphalt1.sks in Resources */,
+				BD6B88F71E646D6D007FEC8A /* Smoke1.sks in Resources */,
 				BD4C21F91E63D29100723BAB /* Motorcycles.sks in Resources */,
 				BDCE8A7E1E6331EF00A3A1CA /* Tents.sks in Resources */,
 				BDCE8A7A1E63314700A3A1CA /* Rocks.sks in Resources */,
@@ -310,12 +373,17 @@
 				BDCE8A861E6332EF00A3A1CA /* Trees.sks in Resources */,
 				BDCE8A421E62F50200A3A1CA /* Assets.xcassets in Resources */,
 				BDCE8A841E6332BE00A3A1CA /* Arrows.sks in Resources */,
+				BD6B88F51E646C3B007FEC8A /* Explosion3.sks in Resources */,
 				BDCE8A801E6331FE00A3A1CA /* Tires.sks in Resources */,
+				BD4B73611E6AB82300173E83 /* Light1.sks in Resources */,
 				BDCE8A821E63320700A3A1CA /* Tribunes.sks in Resources */,
+				BD6B88F21E646A6F007FEC8A /* Explosion1.sks in Resources */,
 				BDCE8A451E62F50200A3A1CA /* LaunchScreen.storyboard in Resources */,
 				BDCE8A781E63313C00A3A1CA /* SkidMarks.sks in Resources */,
+				BD6B88F91E646E7C007FEC8A /* Spark1.sks in Resources */,
 				BDCE8A7C1E63315700A3A1CA /* Cones.sks in Resources */,
 				BDCE8A391E62F50200A3A1CA /* Actions.sks in Resources */,
+				BD6B88EE1E646A0E007FEC8A /* Explosion2.sks in Resources */,
 				BDCE8A881E6332F700A3A1CA /* Lights.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +399,9 @@
 				BD4C220B1E64123700723BAB /* Colors.swift in Sources */,
 				BD4C22071E640C7E00723BAB /* Constants.swift in Sources */,
 				BD6B88E81E644E73007FEC8A /* MenuScene.swift in Sources */,
+				BD4B735E1E6AA16600173E83 /* BitmaskCategories.swift in Sources */,
+				BD4B735C1E6A9CE200173E83 /* Rock.swift in Sources */,
+				BD39620F1E6ACBE300C475D2 /* SmokeEmitterManager.swift in Sources */,
 				BDCE8A3B1E62F50200A3A1CA /* GameScene.swift in Sources */,
 				BDCE8A501E63070700A3A1CA /* MotorcycleAtlasManager.swift in Sources */,
 				BDCE8A3D1E62F50200A3A1CA /* GameViewController.swift in Sources */,
@@ -341,6 +412,7 @@
 				BDCE8A581E63118200A3A1CA /* SandRoadAtlasManager.swift in Sources */,
 				BDCE8A541E63116700A3A1CA /* SandAtlasManager.swift in Sources */,
 				BDCE8A351E62F50200A3A1CA /* AppDelegate.swift in Sources */,
+				BD39620D1E6AC57600C475D2 /* Player.swift in Sources */,
 				BDCE8A561E63117200A3A1CA /* RoadAtlasManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

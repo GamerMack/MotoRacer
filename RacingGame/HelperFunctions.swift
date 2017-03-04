@@ -9,6 +9,18 @@
 import Foundation
 import SpriteKit
 
+//Helper function for unit conversions
+let piToEightDecimalPlaces: CGFloat = 3.14159265;
+
+func convertToDegreesFrom(radiansOf radians: CGFloat)->CGFloat{
+    
+    return (radians*CGFloat(180.0)/piToEightDecimalPlaces)
+}
+
+func convertToRadiansFrom(degreesOf degrees: CGFloat) -> CGFloat{
+    return (degrees*piToEightDecimalPlaces/CGFloat(180.0))
+}
+
 
 func getSpriteWithNameOf(spriteName: String, fromSceneWithNameOf sceneName: String) ->SKSpriteNode{
     
