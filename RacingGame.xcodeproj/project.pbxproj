@@ -121,6 +121,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD3962101E6AE01E00C475D2 /* Encounters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Encounters;
+			sourceTree = "<group>";
+		};
 		BD4B735A1E6A9CBF00173E83 /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +240,7 @@
 		BDCE8A331E62F50200A3A1CA /* RacingGame */ = {
 			isa = PBXGroup;
 			children = (
+				BD3962101E6AE01E00C475D2 /* Encounters */,
 				BD4B735F1E6AB80B00173E83 /* Lights */,
 				BD4B735A1E6A9CBF00173E83 /* GameObjects */,
 				BD6B88F31E646C2B007FEC8A /* ParticleEmitters */,

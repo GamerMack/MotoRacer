@@ -11,7 +11,7 @@ import SpriteKit
 
 
 class Player: SKSpriteNode{
-    let constantMovingVelocity = CGFloat(50)
+    let constantMovingVelocity = CGFloat(600)
     
     var smokeEmitterNode: SKEmitterNode? = SKEmitterNode(fileNamed: "Smoke1.sks")
     var explodeAnimation = SKAction()

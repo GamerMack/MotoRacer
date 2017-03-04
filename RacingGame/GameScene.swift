@@ -26,8 +26,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player = Player()
     let mainCamera = SKCameraNode()
     var environment = SKSpriteNode()
+    
+    var backgrounds = [SKSpriteNode]()
+    
+    var wingman = SKSpriteNode()
+    var wingmanContainer = SKSpriteNode()
 
-    var jumpCount = 1
+    
+    let initialPlayerPosition = CGPoint(x: 180, y: 20)
+    var playerProgress = CGFloat()
+    
+    var jumpCount = CGFloat(1)
+    var jumpHeight = CGFloat()
+    
     
     var lastUpdateTime: TimeInterval = 0
     var timeElapsed: TimeInterval = 0
@@ -45,34 +56,124 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameSceneLabel?.position = CGPoint(x: kViewSize.width/2, y: kViewSize.height/2)
         self.addChild(gameSceneLabel!)
         
+        
         self.physicsWorld.contactDelegate = self
         
         //Instantiate and configure camera
         self.camera = mainCamera
+        self.addChild(mainCamera)
+
         
         
         let scene = SKScene(fileNamed: "DirtSand1")!
         environment = scene.childNode(withName: "Root") as! SKSpriteNode
         environment.scale(to: kViewSize)
-        
+
         environment.move(toParent: self)
-        environment.position = CGPoint(x: kViewSize.width/2-20, y: kViewSize.height/2)
+        environment.position = CGPoint(x: kViewSize.width/2, y: kViewSize.height/2)
         environment.zPosition = 1
+        jumpHeight = kViewSize.height
         
         
         //Player configuration code
-        player.spawn(parentNode: self, position: CGPoint(x: 180, y:20), motorcycleTexture: SKTexture(image: #imageLiteral(resourceName: "motorcycle_red")))
-        
+        player.spawn(parentNode: self, position: initialPlayerPosition, motorcycleTexture: SKTexture(image: #imageLiteral(resourceName: "motorcycle_red")))
+        player.zPosition = 2
         let smokeEmitterNode = smokeEmitterManager.createSmokeEmitterFor(engineState: .NormalRunning)
-        
         smokeEmitterNode.zPosition = 2
         player.addChild(smokeEmitterNode)
         smokeEmitterNode.position = CGPoint(x: 0, y: -30)
         
       
-        self.addChild(mainCamera)
+        //Wingman configuration code
+        wingmanContainer = SKSpriteNode()
+        wingmanContainer.anchorPoint = CGPoint(x: 0.5,y: 0.5)
+        wingmanContainer.size = CGSize(width: kViewSize.width, height: kViewSize.height/3)
+        wingmanContainer.position = CGPoint(x: mainCamera.position.x, y: mainCamera.position.y+200)
+        
+        wingman.anchorPoint = CGPoint(x: 0.5,y: 0.5)
+        wingmanContainer.addChild(wingman)
+        
+        wingman = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "wingMan1")))
+        wingman.position = CGPoint.zero
+        
+        let wingmanAtlas = SKTextureAtlas(named: "WingMan.atlas")
+       
+        
+        let flapDown = SKAction.animate(with: [
+            wingmanAtlas.textureNamed("wingMan1"),
+            wingmanAtlas.textureNamed("wingMan2"),
+            wingmanAtlas.textureNamed("wingMan3"),
+            wingmanAtlas.textureNamed("wingMan4"),
+            wingmanAtlas.textureNamed("wingMan5")
+            ], timePerFrame: 0.25)
+        
+        let flapDown2 = SKAction.animate(with: [
+            SKTexture(image: #imageLiteral(resourceName: "wingMan1")),
+            SKTexture(image: #imageLiteral(resourceName: "wingMan2")),
+            SKTexture(image: #imageLiteral(resourceName: "wingMan3")),
+            SKTexture(image: #imageLiteral(resourceName: "wingMan4")),
+            SKTexture(image: #imageLiteral(resourceName: "wingMan5"))
+            ], timePerFrame: 0.1)
+    
+        let flapUp = SKAction.reversed(flapDown)()
+        let flapUp2 = SKAction.reversed(flapDown2)()
+        
+        let moveLeftAction = SKAction.move(by: CGVector(dx: -200, dy: 0), duration: 2)
+        let moveRightAction = SKAction.move(by: CGVector(dx: 200, dy: 0), duration: 2)
         
         
+        let flappingAnimation = SKAction.sequence([
+                flapDown2,
+                flapUp2
+            ])
+        
+        let movingAnimation = SKAction.sequence([
+                moveLeftAction,
+                moveRightAction
+            ])
+        
+        let flyingAnimation = SKAction.repeatForever(SKAction.group([
+            flappingAnimation,
+            movingAnimation
+            ]))
+        
+        
+        
+        wingman.run(flyingAnimation)
+        
+        self.addChild(wingmanContainer)
+        
+        wingmanContainer.zPosition = 3
+        wingman.zPosition = 3
+        
+        
+        var bomb = SKSpriteNode(texture: nil, color: .clear, size: CGSize(width: 30, height: 30))
+        let explosionAnimation = SKAction.animate(with: [
+            SKTexture(image: #imageLiteral(resourceName: "regularExplosion00")),
+            SKTexture(image: #imageLiteral(resourceName: "regularExplosion01")),
+            SKTexture(image: #imageLiteral(resourceName: "regularExplosion03")),
+            SKTexture(image: #imageLiteral(resourceName: "regularExplosion04")),
+            SKTexture(image: #imageLiteral(resourceName: "regularExplosion05")),
+            SKTexture(image: #imageLiteral(resourceName: "regularExplosion06")),
+            SKTexture(image: #imageLiteral(resourceName: "regularExplosion07")),
+            SKTexture(image: #imageLiteral(resourceName: "regularExplosion08"))
+
+            ], timePerFrame: 0.25)
+       
+        self.addChild(bomb)
+        bomb.zPosition = 3
+        bomb.position = CGPoint(x: mainCamera.position.x, y: mainCamera.position.y+100)
+        
+        bomb.run(SKAction.sequence([SKAction.wait(forDuration: 5.0), explosionAnimation]))
+    }
+    
+    func checkForReposition(playerProgress: CGFloat){
+        let environmentJumpPosition = jumpHeight*jumpCount
+        
+        if playerProgress >= environmentJumpPosition{
+            environment.position.y = jumpHeight*jumpCount
+            jumpCount += 1
+        }
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -145,7 +246,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didSimulatePhysics() {
+        playerProgress = player.position.x - initialPlayerPosition.x
+        checkForReposition(playerProgress: playerProgress)
         mainCamera.position = CGPoint(x: player.position.x, y: player.position.y+200)
+        wingmanContainer.position = CGPoint(x: mainCamera.position.x, y: mainCamera.position.y+200)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
